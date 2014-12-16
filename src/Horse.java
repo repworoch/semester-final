@@ -1,12 +1,20 @@
 import org.asl.karelx.Wanderer;
 
+//import edu.fcps.karel2.Display;
+
 /**
  * Represents a horse wandering around aimlessly in a pasture
  *
  */
 public class Horse extends Wanderer {
 
-	//  TODO Add one or more constructors, as needed
+	public Horse() {
+		super();
+	}
+	
+	public Horse(int x, int y) {
+		super(x, y);
+	}
 	
 	/**
 	 * Wander around in random directions until a specified number of steps have been taken.
@@ -18,6 +26,16 @@ public class Horse extends Wanderer {
 	 * Ex. horse.wander(13, 4) should drop a beeper every four steps until thirteen steps are taken
 	 */
 	public void wander(int count, int timer) {
-		// TODO You implement this
+		
+		for (int i = 1; i <= count; i ++) {
+			super.wander();
+			
+			if (i % timer == 0) {
+				super.putBeeper();
+			}
+		}
+		
+		
+			
 	}
 }
